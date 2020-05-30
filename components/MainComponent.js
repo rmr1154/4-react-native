@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
+import AboutUs from './AboutComponent';
+import ContactUs from './ContactComponent';
 import { View, Platform } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 const DirectoryNavigator = createStackNavigator(
     {
         Directory: { screen: Directory },
-        CampsiteInfo: { screen: CampsiteInfo }
+        CampsiteInfo: { screen: CampsiteInfo },
+        AboutUs: { screen: AboutUs },
+        ContactUs: { screen: ContactUs }
     },
     {
         initialRouteName: 'Directory',
@@ -44,7 +48,9 @@ const HomeNavigator = createStackNavigator(
 const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },
-        Directory: { screen: DirectoryNavigator }
+        Directory: { screen: DirectoryNavigator },
+        AboutUs: { screen: AboutUs },
+        ContactUs: { screen: ContactUs }
     },
     {
         drawerBackgroundColor: '#CEC8FF'
