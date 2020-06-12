@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Card } from 'react-native-elements';
 import { ScrollView, Text } from 'react-native';
 import { CAMPSITES } from '../shared/campsites';
+import * as Animatable from 'react-native-animatable';
+
 
 
 class ContactUs extends Component {
@@ -21,7 +23,8 @@ class ContactUs extends Component {
         const { navigate } = this.props.navigation;
         return (
             <ScrollView>
-                <Card
+                <Animatable.View animation='fadeInDown' duration={2000} delay={1000}>
+                    <Card
                     title='Contact Information'
                     wrapperStyle={{margin: 20}}
                     >
@@ -31,7 +34,8 @@ class ContactUs extends Component {
                     <Text></Text>
                     <Text>Phone: 1-206-555-1234</Text>
                     <Text>Email: campsites@nucamp.co</Text>                    
-                </Card>
+                    </Card>
+                </Animatable.View>
             </ScrollView>
         );
     };
